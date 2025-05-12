@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Roast Machine</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #000;
+            margin: 0;
+            overflow: hidden;
+            color: #ff4d4d;
+        }
+        .message {
+            position: absolute;
+            font-size: 26px;
+            font-weight: bold;
+            background-color: #1a1a1a;
+            border: 2px dashed #ff4d4d;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            animation: moveMessage 5s linear infinite;
+        }
+
+        @keyframes moveMessage {
+            0% {
+                top: 0;
+                left: 0;
+            }
+            100% {
+                top: 100%;
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🔥 Roast Mode: Activated 🔥</h1>
+
+    <script>
+        const roasts = [
+            "Abe tu toh error ka baap hai, debugger bhi confuse ho gaya!",
+            "Aap to ladkiyon vale style mei rhte ho are beta mard ban jao, kab tak gaand ko gaar bologe",
+            "Tere dimaag mein logic ka underflow ho gaya hai!",
+            "aaj Raat 2 abhishek or paida ho jayenge bhaadu",
+            "Are mere lalu laal teri gaand mei to aaj raat apne viriye ki pichkaari marunga",
+            "Tu wo bug hai jo reproduce bhi nahi hota, fix kya karein?",
+            "Tera presence internet latency badha deta hai!",
+            "Or heera bete sher agar chup hai to use chedna nhi chahiye",
+            "Varna gaand ka bhi bhosda ban jaata hai",
+            "Tu itna useless hai, even Stack Overflow tujhe ignore kare!",
+            "Tu variable ho gaya ho — undefined and unnecessary!",
+            "Abe teri coding dekh ke compiler bhi resign de de!",
+            "Tere jaise doston ke liye Ctrl+Alt+Del bana tha!",
+            "Are mere heera bete baap se pange nhi lene chahiye",
+            "Tu wo try-catch block hai jisme kabhi error handle nahi hota!",
+            "Tera IQ aur internet signal — dono unstable hain!",
+            "Tu JavaScript ka 'NaN' hai — Not a Noteworthy!",
+            "Teri Bacho vali luli kaat k aaj Sonal ko dunga",
+            "Lagta hai BIOS bhi tujhe boot karne se inkaar karega!",
+            "Tera brain RAM ke bina CPU jaisa hai — bas showpiece!",
+            "Tu recursive function hai — jo kabhi return nahi karta!",
+            "Bhosdike MadarChod",
+            "Aaj dekhega tu Vishu kya cheez hai",
+            "Gaand mei plaster bharke bhare bazaar mei ghumaunga Gadhe pe bithake",
+            "Debugger tu nahi, dard ka sabab hai tu!"
+        ];
+
+        // Generate random message on the screen
+        function showRandomGaali() {
+            const randomIndex = Math.floor(Math.random() * roasts.length);
+            const randomMessage = roasts[randomIndex];
+
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("message");
+            messageElement.innerText = randomMessage;
+
+            // Set random position
+            messageElement.style.top = `${Math.random() * 100}vh`;
+            messageElement.style.left = `${Math.random() * 100}vw`;
+
+            // Append the message to the body
+            document.body.appendChild(messageElement);
+
+            // Remove message after animation completes
+            setTimeout(() => {
+                messageElement.remove();
+            }, 5000); // Message disappears after 5 seconds
+        }
+
+        // Continuously generate random messages every 200ms
+        setInterval(showRandomGaali, 200);
+    </script>
+</body>
+</html>
